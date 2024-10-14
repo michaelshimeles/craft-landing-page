@@ -1,4 +1,4 @@
-"use client"; 
+// "use client"; 
 
 import { Container, Main, Section } from "@/components/craft";
 // import FeatureCTA from "@/components/home-page/cta";
