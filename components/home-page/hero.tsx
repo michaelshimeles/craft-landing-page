@@ -1,23 +1,34 @@
-// React and Next.js imports
+"use client"; // Ensure this is a client-side component
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-
-// Third-party library imports
 import Balancer from "react-wrap-balancer";
 import { ArrowRight } from "lucide-react";
-
-// Local component imports
 import { Section, Container } from "@/components/craft";
 import { Button } from "../ui/button";
-
-// Asset imports
 import Placeholder from "@/public/placeholder.webp";
 
 const Hero = () => {
   return (
     <Section>
       <Container>
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }} // Start with opacity 0 and move it 50px down
+          animate={{ opacity: 1, y: 0 }} // Fade to opacity 1 and move to original position
+          transition={{ duration: 0.3, ease: "easeOut" }} // Customize the duration and easing
+          className="flex flex-col items-center justify-center text-center min-h-screen"
+        >
+            <h1 className="text-4xl font-bold">
+            <Balancer>
+            ByteDental
+            </Balancer>
+          </h1>
+          <h2 className="text-4xl  text-muted-foreground">
+            <Balancer>
+            Optimized, automated marketing solutions for dental practices.
+            </Balancer>
+          </h2>
           <Button
             asChild
             className="mb-6 w-fit"
@@ -25,32 +36,25 @@ const Hero = () => {
             variant={"outline"}
           >
             <Link className="not-prose" href="https://9d8.dev">
-              Lorem ipsum dolor sit amet <ArrowRight className="w-4" />
+              Discover Our Services <ArrowRight className="w-4" />
             </Link>
           </Button>
-          <h1>
+          {/* <h3 className="text-muted-foreground text-lg max-w-lg mt-4">
             <Balancer>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              Helping dentists grow with modern, results-driven marketing. From web design to patient engagement, we build strategies that work.
             </Balancer>
-          </h1>
-          <h3 className="text-muted-foreground">
-            <Balancer>
-              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </Balancer>
-          </h3>
+          </h3> */}
           <div className="not-prose my-8 h-96 w-full overflow-hidden rounded-lg border md:h-[480px] md:rounded-xl">
             <Image
               className="h-full w-full object-cover object-bottom"
-              src={Placeholder}
+              src="/images/teethxray.jpg"
               width={1920}
               height={1080}
               alt="hero image"
-              placeholder="blur"
+              // placeholder="blur"
             />
           </div>
-        </div>
+        </motion.div>
       </Container>
     </Section>
   );

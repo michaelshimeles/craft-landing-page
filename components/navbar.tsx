@@ -22,7 +22,7 @@ export function NavBar() {
                     </SheetTrigger>
                     <SheetContent side="left">
                         <SheetHeader>
-                            <SheetTitle>fabrika.</SheetTitle>
+                            <SheetTitle>ByteDental.</SheetTitle>
                             <SheetDescription>
                                 Scale and launch products with expert developers, on-demand, at a flat monthly fee
                             </SheetDescription>
@@ -60,16 +60,16 @@ export function NavBar() {
                 <NavigationMenu>
                     <NavigationMenuList className="max-[825px]:hidden ">
                         <Link href="/" className="pl-2">
-                            <h1 className="font-bold">fabrika.</h1>
+                            <h1 className="font-bold">ByteDental.</h1>
                         </Link>
                     </NavigationMenuList>
                 </NavigationMenu>
                 <div className="flex items-center gap-2 max-[825px]:hidden">
                     <Link href="/software">
-                        <Button variant="ghost">Software</Button>
+                        <Button variant="ghost">Services</Button>
                     </Link>
                     <Link href="/automation">
-                        <Button variant="ghost">Automation</Button>
+                        <Button variant="ghost">Pricing</Button>
                     </Link>
                     <Link href="/blog">
                         <Button variant="ghost">Blog</Button>
