@@ -9,47 +9,55 @@ import Balancer from "react-wrap-balancer";
 import { Section, Container } from "../craft";
 
 // Asset imports
-import Logo from "@/public/next.svg";
+import Logo from "@/public/next.svg"; // Replace with ByteDental logo when available
+import { Calendar } from 'lucide-react'; // Add calendar icon
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="bg-gray-50/50">
       <Section>
-        <Container className="grid gap-12 md:grid-cols-[1.5fr_0.5fr_0.5fr]">
+        <Container className="grid gap-12 md:grid-cols-[2fr_1fr_1fr]">
+          {/* Brand Column */}
           <div className="grid gap-6">
-            <Link href="/">
-              <h3 className="sr-only">brijr/components</h3>
-              <Image
-                src={Logo}
-                alt="Logo"
-                width={120}
-                height={27.27}
-                className="transition-all hover:opacity-75 dark:invert"
-              ></Image>
-            </Link>
-            <p>
+            <Link href="/" className="font-bold text-2xl">ByteDental</Link>
+            <p className="text-base text-gray-600">
               <Balancer>
-                brijr/components is a collection of Next.js, React, Typescript
-                components for building landing pages and websites.
+                Transform your dental practice with AI-powered marketing. 
+                Own your website, control your growth.
               </Balancer>
             </p>
-            <p className="text-muted-foreground">
-              ©{" "}
-              <a href="https://github.com/brijr/components">brijr/components</a>
-              . All rights reserved. 2024-present.
-            </p>
+            <Link 
+              href="https://cal.com/kabir-khan/30min" 
+              className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+            >
+              <Calendar className="w-4 h-4" />
+              Book a Free Discovery Call →
+            </Link>
           </div>
-          <div className="flex flex-col gap-2">
-            <h5>Website</h5>
-            <Link href="/">Blog</Link>
-            <Link href="/">Authors</Link>
-            <Link href="/">Categories</Link>
+
+          {/* Main Links */}
+          <div className="flex flex-col gap-4">
+            <h5 className="font-semibold text-lg">Solutions</h5>
+            <Link href="/services" className="text-gray-600 hover:text-primary">Custom Websites</Link>
+            <Link href="/services#marketing" className="text-gray-600 hover:text-primary">AI Marketing</Link>
+            <Link href="/services#automation" className="text-gray-600 hover:text-primary">Practice Growth</Link>
+            <Link href="/case-studies" className="text-gray-600 hover:text-primary">Success Stories</Link>
           </div>
-          <div className="flex flex-col gap-2">
-            <h5>Legal</h5>
-            <Link href="/privacy-policy">Privacy Policy</Link>
-            <Link href="/terms-of-service">Terms of Service</Link>
-            <Link href="/cookie-policy">Cookie Policy</Link>
+
+          {/* Company */}
+          <div className="flex flex-col gap-4">
+            <h5 className="font-semibold text-lg">Company</h5>
+            <Link href="/about" className="text-gray-600 hover:text-primary">About Us</Link>
+            <Link href="/blog" className="text-gray-600 hover:text-primary">Blog</Link>
+            <div className="mt-auto pt-6">
+              <p className="text-sm text-gray-500">
+                © {new Date().getFullYear()} ByteDental
+              </p>
+              <div className="flex gap-4 mt-2 text-sm text-gray-500">
+                <Link href="/privacy" className="hover:text-primary">Privacy</Link>
+                <Link href="/terms" className="hover:text-primary">Terms</Link>
+              </div>
+            </div>
           </div>
         </Container>
       </Section>

@@ -19,27 +19,29 @@ const photos = [
   {
     src:  "/images/Dentures.jpg",
   },
-  {
-    src:  "/images/teethxray.jpg",
-  },
-  {
-    src: "/images/teethxray.jpg",
-  },
   // {
-  //   src: "https://images.unsplash.com/photo-1720887236665-43caad593cdf?q=80&w=1836&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //   src:  "/images/teethxray.jpg",
   // },
+  {
+    src: "/images/doctorputtingupxrays.jpg",
+  },
+  {
+    src: "/images/denistoperating2.jpg",
+  },
+  {
+    src: "/images/blackwhiteteethmold.jpg",
+  },
+
+  {
+    src: "/images/dentalutensils.jpg",
+  },
+
 ];
 
 const FeatureNine = () => {
   return (
     <Section>
       <Container>
-        {/* <h2 className="!mt-0 mb-4">This is a Feature with an Image Carousel</h2> */}
-        {/* <p>
-          Use it to showcase your latest images. Get started at
-          components.bridgher.to and make sure to install brijr/craft for
-          styling.
-        </p> */}
         <Carousel className="mt-6 w-full">
           <CarouselContent className="-ml-1">
             {photos.map((photo, index) => (
