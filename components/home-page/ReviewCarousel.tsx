@@ -6,6 +6,10 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 
 const ReviewCarousel = () => {
+  // Define refs only once
+  const containerRef = useRef<HTMLDivElement>(null);
+  const xPos = useRef(0);
+
   const reviews = [
     {
       id: 1,
@@ -35,22 +39,23 @@ const ReviewCarousel = () => {
 
   const duplicatedReviews = [...reviews, ...reviews, ...reviews, ...reviews, ...reviews];
   
-  const containerRef = useRef(null);
-  const xPos = useRef(0);
-  
   const springConfig = { damping: 25, stiffness: 35 };
   const x = useSpring(0, springConfig);
 
   useAnimationFrame(() => {
     const SCROLL_SPEED = 0.3;
-    xPos.current -= SCROLL_SPEED;
-    
-    const containerWidth = containerRef.current?.offsetWidth || 0;
-    if (-xPos.current >= containerWidth / 5) {
-      xPos.current = 0;
-    }
-    
-    x.set(xPos.current);
+    const animate = () => {
+      if (!containerRef.current) return;  // Add a guard clause
+      
+      xPos.current -= SCROLL_SPEED;
+      const containerWidth = containerRef.current.offsetWidth || 0;
+      
+      if (-xPos.current >= containerWidth / 5) {
+        xPos.current = 0;
+      }
+      
+      x.set(xPos.current);
+    };
   });
 
   return (
